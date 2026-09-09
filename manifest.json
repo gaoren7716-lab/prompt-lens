@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "PromptLens · 图片反推提示词",
+  "version": "1.4.0",
+  "description": "网页图片右键或悬停点击，一键反推 AI 生图提示词（Midjourney / SD / Flux / 即梦 / 豆包）",
+  "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PromptLens · 反推提示词"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

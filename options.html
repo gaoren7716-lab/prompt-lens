@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN" data-page-node-id="MJAgaRlTA7ZAvfzF53lQYP">
+<head data-page-node-id="nQS9udoC5Gr4tou1M3Fa3D">
+<meta charset="utf-8" data-page-node-id="fc9DvpOCoZARCgIy6EUQe9">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="KRr9H2tWwwQ9qrfQJFadsp">
+<title>PromptLens 设置</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 60px;
+    font: 14px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    background: #f5f5f7; color: #1c1c1e;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #161617; color: #f2f2f7; }
+    .card { background: #1c1c1e !important; border-color: rgba(255,255,255,.09) !important; }
+    input, select, textarea { background: #2c2c2e !important; color: #f2f2f7 !important; border-color: rgba(255,255,255,.14) !important; }
+  }
+  .wrap { max-width: 660px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: #8a8a8e; font-size: 13px; margin-bottom: 22px; }
+  .card {
+    background: #fff; border: 1px solid rgba(0,0,0,.08); border-radius: 14px;
+    padding: 18px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0,0,0,.03);
+  }
+  .card h2 { font-size: 14px; margin: 0 0 14px; letter-spacing: .3px; }
+  label { display: block; font-size: 12.5px; font-weight: 600; color: #6b6b70; margin: 0 0 12px; }
+  input[type=text], input[type=password], input[type=number], select, textarea {
+    width: 100%; margin-top: 5px; padding: 9px 11px; font-size: 13.5px; font-weight: 400;
+    border: 1px solid rgba(0,0,0,.14); border-radius: 9px; background: #fff; color: #1c1c1e;
+    font-family: inherit;
+  }
+  textarea { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 12.5px; line-height: 1.6; resize: vertical; }
+  .row { display: flex; gap: 12px; }
+  .row > * { flex: 1; min-width: 0; }
+  .check { display: flex; align-items: center; gap: 8px; font-weight: 500; color: #1c1c1e; font-size: 13.5px; }
+  .check input { width: 16px; height: 16px; margin: 0; }
+  .actions { display: flex; gap: 10px; margin-top: 6px; }
+  button {
+    padding: 10px 18px; border-radius: 10px; border: 1px solid rgba(0,0,0,.14);
+    background: #fff; color: #1c1c1e; font-size: 13.5px; font-weight: 600; cursor: pointer;
+  }
+  button.primary { background: linear-gradient(135deg, #7c5cff, #b45cff); color: #fff; border-color: transparent; }
+  button.primary:hover { filter: brightness(1.06); }
+  #status { margin-top: 14px; font-size: 13px; white-space: pre-wrap; }
+  #status.ok { color: #1a8f4c; }
+  #status.err { color: #d0342c; }
+  a { color: #7c5cff; }
+  .hint { font-size: 12px; color: #8a8a8e; margin-top: -8px; margin-bottom: 12px; font-weight: 400; }
+  .hint strong { color: #1c1c1e; }
+  @media (prefers-color-scheme: dark) {
+    .hint strong { color: #f2f2f7; }
+  }
+</style>
+</head>
+<body data-page-node-id="51xxzVnC8VkWsRY52MZMH1">
+<div class="wrap" data-page-node-id="DsqDhscB1zlnuc8nQmCRDf">
+  <h1 data-page-node-id="WhG83N3i2PdJ7F0I9Oa9bj">✨ PromptLens · 图片反推提示词</h1>
+  <div class="sub" data-page-node-id="Q0hBDwRWwyEqogQRebFKEN">配置一次，之后网页里右键图片 / 悬停点按钮就能反推提示词。</div>
+
+  <div class="card" data-page-node-id="TrqoCXrUPsUzrD8iDhR713">
+    <h2 data-page-node-id="IvU8c5ek48VJJSojay9wp3">模型接口（OpenAI 兼容视觉模型）</h2>
+    <label data-page-node-id="HeVZfMRTDZJRpnXOYEC05L">服务商预设
+      <select id="provider" data-page-node-id="rpnZDXPWjSVG4CeYc6JX2Z"></select>
+    </label>
+    <div class="hint" data-page-node-id="wqWGTedfA1iVZAsrHsoBh9">没有 Key？<a id="keyLink" href="#" target="_blank" rel="noreferrer" data-page-node-id="ZPUqlYuJNUB0I6B19dVqkB">点这里去申请</a>（推荐智谱 glm-4v-flash，有免费额度）</div>
+    <label data-page-node-id="PClFi6rpESfYMHPlBgBGt8">Base URL<input id="baseUrl" type="text" placeholder="https://open.bigmodel.cn/api/paas/v4" data-page-node-id="jYkDUzTmFlZYCPDizv5AjO"></label>
+    <label data-page-node-id="9Cmf3RwMUEPt25pCVDPBfJ">API Key<input id="apiKey" type="password" placeholder="粘贴你的 API Key" data-page-node-id="fpWYvZfxyXQXoowFvwqgNl"></label>
+    <label data-page-node-id="KAFUVxcRUJeYTYCBLAgszE">模型名<input id="model" type="text" list="modelList" placeholder="glm-4v-flash" data-page-node-id="rb2JOfiUuEPb9TFPMr1EZy">
+      <datalist id="modelList"></datalist>
+    </label>
+    <div class="hint" id="modelNote"></div>
+  </div>
+
+  <div class="card" data-page-node-id="iq6kB5sDHok6DA7CbtZ9vr">
+    <h2 data-page-node-id="ywvF32zk2f76eSwmiSH47z">输出格式</h2>
+    <label data-page-node-id="AiXb1ymf6383HAd75JHJ2w">反推模板（模型会严格按这个格式输出）
+      <textarea id="template" rows="14"></textarea>
+    </label>
+    <label data-page-node-id="ojpQFXLaP1plCAmFuJpTyI">最大输出 tokens<input id="maxTokens" type="number" min="300" max="8000" step="100" data-page-node-id="Rdk7oQbc7UlzM4bk4HLmdn"></label>
+    <div class="hint">默认 1500 够用（四块内容约 500 tokens）。只有把上面模板改长、结果出现「输出半截」时才需要调大。</div>
+  </div>
+
+  <div class="card" data-page-node-id="fxY3IPjCdzF9AvXtqT5Id2">
+    <h2 data-page-node-id="rCGh32Vg6RYADJ1vAC3PXM">交互方式</h2>
+    <label class="check" data-page-node-id="SOJO2p1FJsjPQQ6cwhej39"><input type="checkbox" id="hoverEnabled" data-page-node-id="lCmcE0b7f9FMBNYTneYGin"> 鼠标悬停图片时显示「✨ 反推提示词」按钮</label>
+    <label class="check" data-page-node-id="7yNJXE3hV8Ccg4nOaG8Cvd"><input type="checkbox" id="autoCopy" data-page-node-id="uCV3dtPuVmKmXHZR3HxvU7"> 分析完成后自动复制全文到剪贴板</label>
+    <div class="hint" data-page-node-id="7HoWFpsqVAI8kuteWIxI5r">右键菜单「反推这张图的提示词」始终可用，与上面的开关无关。</div>
+  </div>
+
+  <div class="actions" data-page-node-id="cXehKhRDQCjTqlaljRagzM">
+    <button class="primary" id="save" data-page-node-id="Dq0rhIEaOR73Y14735Vm41">保存设置</button>
+    <button id="test" data-page-node-id="O5ONynpSAkWJ9tgUHoJGbl">测试连接</button>
+    <button id="reset" data-page-node-id="KWo0T5YG7Wkb6PhMdtT3cF">恢复默认</button>
+  </div>
+  <div id="status" data-page-node-id="OvuJZ6xiBUXlHJyT7unYqX"></div>
+</div>
+<script src="options.js"></script>
+</body>
+</html>
