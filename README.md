@@ -20,6 +20,8 @@
 
 与简单罗列物体的反推不同，这套模板强制模型**先判断图片类型**（摄影 / 海报 / 产品 / UI / 插画…），再按对应维度分析，并明确禁止虚构元素、禁止堆砌 `masterpiece` 这类无效词、禁止在 Prompt 里写品牌名与技术参数。
 
+<img width="784" height="1224" alt="image" src="https://github.com/user-attachments/assets/ce63efcf-2b0b-4c50-86d3-cfbb834a315f" />
+
 ---
 
 ## 目录
@@ -83,17 +85,16 @@
 
 | 推荐度 | 模型 | 服务商 | 特点 |
 |---|---|---|---|
-| **首选** | `glm-4v-flash` | 智谱 | 永久免费、最快，默认推荐 |
-| **首选** | `glm-4.6v-flash` | 智谱 | 永久免费、128K，画面描述更细 |
+| **首选** | `glm-4v-flash` | 智谱 | 最快，默认推荐 |
+| **首选** | `glm-4.6v-flash` | 智谱 | 128K，画面描述更细 |
+| **首选** | `deepseek-v4-flash-vision-exp` | DeepSeek | 极便宜，DeepSeek 唯一能看图的（实验版） |
 | **首选** | `qwen3-vl-plus` / `qwen3-vl-flash` | 阿里百炼 | 便宜、均衡 / 最快 |
 | **首选** | `Qwen/Qwen3-VL-32B-Instruct` | 硅基流动 | 便宜够用 |
-| **首选** | `deepseek-v4-flash-vision-exp` | DeepSeek | 极便宜，DeepSeek 唯一能看图的（实验版） |
 | 进阶 | `glm-4.1v-thinking-flash` | 智谱 | 免费，视觉推理更强（略慢） |
 | 进阶 | `Qwen3-VL-235B` / `qwen3-vl-235b-a22b` | 硅基 / 百炼 | 最强，贵 |
-| 进阶 | `gpt-5-mini` | OpenAI | 效果最好 |
+| 进阶 | `gpt-5.6` | OpenAI | 效果最好 |
 | 备选 | `doubao-1.5-vision-pro` | 火山方舟 | 国内合规，需填 `ep-` 接入点 ID |
-| 备选 | `gpt-4o-mini` / `gpt-4.1-mini` | OpenAI | 海外，便宜 |
-| 备选 | `gemini-2.5-flash` / `gemini-3.1-flash-lite` | OpenRouter | 海外 |
+| 备选 | `gemini-3.8-flash` | OpenRouter | 海外 |
 | 旗舰 | `glm-5v-turbo` | 智谱 | 贵，追求极限再上 |
 
 **不会选就选第一行。**
