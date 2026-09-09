@@ -75,11 +75,24 @@
 
   <div class="card" data-page-node-id="iq6kB5sDHok6DA7CbtZ9vr">
     <h2 data-page-node-id="ywvF32zk2f76eSwmiSH47z">输出格式</h2>
-    <label data-page-node-id="AiXb1ymf6383HAd75JHJ2w">反推模板（模型会严格按这个格式输出）
-      <textarea id="template" rows="14"></textarea>
+    <div class="row">
+      <label>模板预设
+        <select id="tplPreset">
+          <option value="standard">标准（7 段 · 推荐）</option>
+          <option value="simple">精简（4 段 · 快）</option>
+          <option value="full">完整（9 段 · 最强）</option>
+        </select>
+      </label>
+      <label>目标生图模型
+        <select id="targetModel"></select>
+      </label>
+    </div>
+    <div class="hint">标准版额外输出画面类型、构图控制、文字处理；完整版再加视觉 DNA 与复现建议（输出更长，建议把下面 tokens 调到 3000 以上）。选 Flux 时不再输出反向提示词。</div>
+    <label data-page-node-id="AiXb1ymf6383HAd75JHJ2w">反推模板（模型会严格按这个格式输出，可自由改写）
+      <textarea id="template" rows="16"></textarea>
     </label>
     <label data-page-node-id="ojpQFXLaP1plCAmFuJpTyI">最大输出 tokens<input id="maxTokens" type="number" min="300" max="8000" step="100" data-page-node-id="Rdk7oQbc7UlzM4bk4HLmdn"></label>
-    <div class="hint">默认 1500 够用（四块内容约 500 tokens）。只有把上面模板改长、结果出现「输出半截」时才需要调大。</div>
+    <div class="hint">标准版约需 1200–1800，默认已调到 2500。只有把模板改得特别长、结果出现「输出半截」时才需要再调大。</div>
   </div>
 
   <div class="card" data-page-node-id="fxY3IPjCdzF9AvXtqT5Id2">

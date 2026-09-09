@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "PromptLens · 图片反推提示词",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "网页图片右键或悬停点击，一键反推 AI 生图提示词（Midjourney / SD / Flux / 即梦 / 豆包）",
   "permissions": ["contextMenus", "storage", "activeTab", "scripting"],
   "host_permissions": ["http://*/*", "https://*/*"],
